@@ -157,7 +157,7 @@
                 android:layout_height="match_parent"
                 android:clipToPadding="true"
                 android:paddingStart="8dp"
-                tools:listitem="@layout/row_mainv"/>
+                tools:listitem="@layout/row_mainv" />
 
         </LinearLayout>
     </ScrollView>
