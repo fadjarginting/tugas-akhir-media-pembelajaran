@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 
 class MateriAdapter (val dataMateri:List<DataItem?>?) : RecyclerView.Adapter<MateriAdapter.MyViewHolder>() {
     class MyViewHolder (view: View) : RecyclerView.ViewHolder(view) {
+        val imgMateri = view.findViewById<ImageView>(R.id.img_card)
         val judulMateri = view.findViewById<TextView>(R.id.judul_materi)
         val detailMateri = view.findViewById<TextView>(R.id.detail_materi)
     }
@@ -31,10 +32,29 @@ class MateriAdapter (val dataMateri:List<DataItem?>?) : RecyclerView.Adapter<Mat
         holder.judulMateri.text = dataMateri?.get(position)?.judul
         holder.detailMateri.text = dataMateri?.get(position)?.materi
 
+        val gambar = "http://192.168.1.14/androidapi/public/storage/materi/" + dataMateri?.get(position)?.gambar
 
-        holder.itemView.setOnClickListener{
-            val judul = dataMateri?.get(position)?.judul
-            Toast.makeText(holder.itemView.context, "${judul}", Toast.LENGTH_SHORT).show()
+        // Load image using Glide
+        Glide.with(holder.itemView.context)
+            .load(gambar)
+            .placeholder(R.drawable.ic_launcher_background) // You can set a placeholder image
+            .error(R.drawable.ic_launcher_background) // You can set an error image
+            .into(holder.imgMateri)
+
+
+
+//        holder.itemView.setOnClickListener{
+//            val judul = dataMateri?.get(position)?.judul
+//            Toast.makeText(holder.itemView.context, "${judul}", Toast.LENGTH_SHORT).show()
+//        }
+    }
+
+    class Picasso {
+        companion object {
+            fun get(): Any {
+                TODO("Not yet implemented")
+            }
         }
+
     }
 }

@@ -26,7 +26,6 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
         val materi = view.findViewById<RecyclerView>(R.id.rv_materi_home)
-
         ApiMateriConfig.getService().getMateri().enqueue(object : Callback<ResponseMateri> {
             override fun onResponse(call: Call<ResponseMateri>, response: Response<ResponseMateri>) {
                 if (response.isSuccessful) {

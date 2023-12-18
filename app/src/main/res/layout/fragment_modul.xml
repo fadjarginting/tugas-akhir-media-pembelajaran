@@ -52,7 +52,7 @@
                     android:layout_gravity="center">
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/btn_back"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:background="@drawable/ic_btn_back"
@@ -80,13 +80,13 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_modul"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
                 android:paddingStart="4dp"
-                tools:listitem="@layout/row_mainv"
 
-                />
+                tools:listitem="@layout/row_mainv" />
 
         </LinearLayout>
     </ScrollView>
