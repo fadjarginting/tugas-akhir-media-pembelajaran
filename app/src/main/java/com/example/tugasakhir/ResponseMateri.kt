@@ -37,6 +37,9 @@ data class DataItem(
 	@field:SerializedName("judul")
 	val judul: String? = null,
 
+	@field:SerializedName("gambar")
+	val gambar: Any? = null,
+
 	@field:SerializedName("link_vd")
 	val linkVd: String? = null
 )

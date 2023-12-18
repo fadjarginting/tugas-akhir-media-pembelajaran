@@ -1,4 +1,40 @@
 package com.example.tugasakhir
 
-class MateriAdapter {
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+
+class MateriAdapter (val dataMateri:List<DataItem?>?) : RecyclerView.Adapter<MateriAdapter.MyViewHolder>() {
+    class MyViewHolder (view: View) : RecyclerView.ViewHolder(view) {
+        val judulMateri = view.findViewById<TextView>(R.id.judul_materi)
+        val detailMateri = view.findViewById<TextView>(R.id.detail_materi)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.row_mainv, parent, false)
+        return MyViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        if (dataMateri != null){
+            return dataMateri.size
+        }
+        return 0
+    }
+
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.judulMateri.text = dataMateri?.get(position)?.judul
+        holder.detailMateri.text = dataMateri?.get(position)?.materi
+
+
+        holder.itemView.setOnClickListener{
+            val judul = dataMateri?.get(position)?.judul
+            Toast.makeText(holder.itemView.context, "${judul}", Toast.LENGTH_SHORT).show()
+        }
+    }
 }
