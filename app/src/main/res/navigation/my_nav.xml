@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.tugasakhir.HomeFragment"
+        android:name="com.example.tugasakhir.main.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_modul" />
     <fragment
         android:id="@+id/userProfileFragment"
-        android:name="com.example.tugasakhir.UserProfileFragment"
+        android:name="com.example.tugasakhir.main.UserProfileFragment"
         android:label="fragment_user_profile"
         tools:layout="@layout/fragment_user_profile" />
 </navigation>

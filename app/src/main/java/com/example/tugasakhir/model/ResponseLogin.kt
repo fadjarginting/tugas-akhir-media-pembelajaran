@@ -1,11 +1,11 @@
-package com.example.tugasakhir.model
+	package com.example.tugasakhir.model
 
 import com.google.gson.annotations.SerializedName
 
 data class ResponseLogin(
 
 	@field:SerializedName("data")
-	val data: Data? = null,
+	val data: DataUser? = null,
 
 	@field:SerializedName("message")
 	val message: String? = null,
@@ -14,16 +14,16 @@ data class ResponseLogin(
 	val status: Int? = null
 )
 
-data class Data(
+data class DataUser(
 
 	@field:SerializedName("user")
-	val user: User? = null,
+	val user: UserLogin? = null,
 
 	@field:SerializedName("token")
 	val token: String? = null
 )
 
-data class User(
+data class UserLogin(
 
 	@field:SerializedName("role")
 	val role: String? = null,

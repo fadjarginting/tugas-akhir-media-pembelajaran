@@ -2,7 +2,7 @@ package com.example.tugasakhir.model
 
 import com.google.gson.annotations.SerializedName
 
-data class ResponseValidasi(
+data class ResponseRegister(
 
 	@field:SerializedName("message")
 	val message: String? = null,
