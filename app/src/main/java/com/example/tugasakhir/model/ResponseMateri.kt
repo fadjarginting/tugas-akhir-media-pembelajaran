@@ -1,4 +1,4 @@
-package com.example.tugasakhir
+package com.example.tugasakhir.model
 
 import com.google.gson.annotations.SerializedName
 
@@ -19,14 +19,20 @@ data class ResponseMateri(
 
 data class DataItem(
 
-	@field:SerializedName("materi")
-	val materi: String? = null,
+	@field:SerializedName("cover")
+	val cover: String? = null,
+
+	@field:SerializedName("infografis")
+	val infografis: String? = null,
+
+	@field:SerializedName("bab")
+	val bab: String? = null,
+
+	@field:SerializedName("link_video")
+	val linkVideo: String? = null,
 
 	@field:SerializedName("updated_at")
 	val updatedAt: String? = null,
-
-	@field:SerializedName("namaFile")
-	val namaFile: String? = null,
 
 	@field:SerializedName("created_at")
 	val createdAt: String? = null,
@@ -34,12 +40,15 @@ data class DataItem(
 	@field:SerializedName("id")
 	val id: Int? = null,
 
+	@field:SerializedName("deskripsi")
+	val deskripsi: String? = null,
+
 	@field:SerializedName("judul")
 	val judul: String? = null,
 
-	@field:SerializedName("gambar")
-	val gambar: Any? = null,
+	@field:SerializedName("keyword")
+	val keyword: String? = null,
 
-	@field:SerializedName("link_vd")
-	val linkVd: String? = null
+	@field:SerializedName("filepdf")
+	val filepdf: String? = null
 )
