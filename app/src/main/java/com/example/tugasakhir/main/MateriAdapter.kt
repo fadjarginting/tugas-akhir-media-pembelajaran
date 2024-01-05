@@ -46,7 +46,7 @@ class MateriAdapter (val dataMateri:List<DataItem?>?) : RecyclerView.Adapter<Mat
                 .load(gambarmateri)
                 .into(holder.coverMateri)
             holder.pb.visibility = View.GONE
-        }
+        }   
         //set on click listener pindah ke detail
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetailActivity::class.java)
