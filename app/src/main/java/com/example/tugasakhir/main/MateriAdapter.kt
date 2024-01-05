@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.tugasakhir.model.DataItem
 import com.example.tugasakhir.R
+import com.example.tugasakhir.model.ResponseMateri
+import com.google.gson.Gson
 
 class MateriAdapter (val dataMateri:List<DataItem?>?) : RecyclerView.Adapter<MateriAdapter.MyViewHolder>() {
     class MyViewHolder (view: View) : RecyclerView.ViewHolder(view) {
@@ -48,11 +50,8 @@ class MateriAdapter (val dataMateri:List<DataItem?>?) : RecyclerView.Adapter<Mat
         //set on click listener pindah ke detail
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetailActivity::class.java)
-            intent.putExtra("bab", dataMateri?.get(position)?.bab)
-            intent.putExtra("judul", dataMateri?.get(position)?.judul)
-            intent.putExtra("deskripsi", dataMateri?.get(position)?.deskripsi)
-            intent.putExtra("keyword", dataMateri?.get(position)?.keyword)
-            intent.putExtra("cover", dataMateri?.get(position)?.cover)
+            val materi = Gson().toJson(dataMateri?.get(position))
+            intent.putExtra("extra", materi)
             holder.itemView.context.startActivity(intent)
             Toast.makeText(holder.itemView.context, "Anda memilih ${dataMateri?.get(position)?.judul}", Toast.LENGTH_SHORT).show()
         }
