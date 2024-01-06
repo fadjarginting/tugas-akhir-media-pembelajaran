@@ -23,6 +23,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug")
+            applicationIdSuffix = "1.0.0"
+            versionNameSuffix = "sejarah kelas xi"
         }
     }
     compileOptions {

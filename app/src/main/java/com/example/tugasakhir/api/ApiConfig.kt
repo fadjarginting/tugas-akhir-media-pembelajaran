@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiConfig {
-    private const val baseURL = "http://192.168.1.5/androidapi/public/api/"
+    private const val baseURL = "https://webapiandro.000webhostapp.com/api/"
     private fun getRetrofit() : Retrofit {
         return Retrofit.Builder().baseUrl(baseURL)
             .addConverterFactory(GsonConverterFactory.create())

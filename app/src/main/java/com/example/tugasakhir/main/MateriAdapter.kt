@@ -41,7 +41,7 @@ class MateriAdapter (val dataMateri:List<DataItem?>?) : RecyclerView.Adapter<Mat
 
         if (dataMateri?.get(position)?.cover != null){
             holder.coverMateri.setImageResource(0)
-            val gambarmateri = "http://192.168.1.5/androidapi/public/storage/cover/" + dataMateri.get(position)?.cover
+            val gambarmateri = "https://webapiandro.000webhostapp.com/storage/cover/" + dataMateri.get(position)?.cover
             Glide.with(holder.itemView.context)
                 .load(gambarmateri)
                 .into(holder.coverMateri)

@@ -46,9 +46,9 @@
                 </xyz.sahildave.arclayout.ArcLayout>
 
                 <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/ivp_profil"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:src="@drawable/user_2"
                     app:layout_constraintBottom_toBottomOf="@+id/arcLayout3"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -64,9 +64,10 @@
                     android:text="Nama User"
                     android:textColor="@color/teal_200"
                     android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+                    app:layout_constraintTop_toBottomOf="@+id/ivp_profil" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -79,6 +80,7 @@
                     android:id="@+id/imageView10"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
                     android:src="@drawable/ic_email"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -89,10 +91,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="mail@email.com"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:fontFamily="@font/poppins_medium"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView10"
@@ -106,27 +108,27 @@
                 android:background="@drawable/bg_edittext">
 
                 <ImageView
-                    android:id="@+id/imageView14"
+                    android:id="@+id/imageView18"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_jam"
-
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_role"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tvp_waktu"
+                    android:id="@+id/tvp_role"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Time spend"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Role"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toEndOf="@+id/imageView14"
+                    app:layout_constraintStart_toEndOf="@+id/imageView18"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -138,27 +140,28 @@
                 android:background="@drawable/bg_edittext">
 
                 <ImageView
-                    android:id="@+id/imageView18"
+                    android:id="@+id/imageView14"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_jam"
+                    android:layout_marginStart="8dp"
 
+                    android:src="@drawable/ic_jam"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tvp_role"
+                    android:id="@+id/tvp_waktu"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="Role"
                     android:layout_marginStart="16dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="00:00"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView18"
+                    app:layout_constraintStart_toEndOf="@+id/imageView14"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@ import com.example.tugasakhir.R
 import com.example.tugasakhir.api.ApiConfig
 import com.example.tugasakhir.main.MainActivity
 import com.example.tugasakhir.model.ResponseLogin
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -60,6 +61,8 @@ class LoginActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    val user = Gson().toJson(respon.data.user)
+                    intent.putExtra("extra", user)
                     startActivity(intent)
                     finish()
                 }else {

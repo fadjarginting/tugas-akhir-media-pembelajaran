@@ -67,7 +67,7 @@ class DetailActivity : AppCompatActivity() {
         val data = intent.getStringExtra("extra")
         val materi = Gson().fromJson<DataItem>(data, DataItem::class.java)
         val popInfo = popupDialog.findViewById<ImageView>(R.id.popIfografis)
-        val imageInfo = "http://192.168.1.5/androidapi/public/storage/infografis/" + materi.infografis
+        val imageInfo = "https://webapiandro.000webhostapp.com/storage/infografis/" + materi.infografis
         Glide.with(this)
             .load(imageInfo)
             .into(popInfo)
@@ -135,7 +135,7 @@ class DetailActivity : AppCompatActivity() {
         tvdDesc.text = "Deskripsi: " + materi.deskripsi
         tvdKeyword.text = "Keyword: " + materi.keyword
         ivdCover.setImageResource(0)
-        val imageCover =  "http://192.168.1.5/androidapi/public/storage/cover/" + materi.cover
+        val imageCover =  "https://webapiandro.000webhostapp.com/storage/cover/" + materi.cover
         Glide.with(this)
             .load(imageCover)
             .into(ivdCover)
@@ -162,7 +162,12 @@ class DetailActivity : AppCompatActivity() {
             .setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, namaFile)
 
         downloadManager.enqueue(request)
-        Toast.makeText(this@DetailActivity, "File $namaFile berhasil di download", Toast.LENGTH_SHORT).show()
+        // cek download berhasil atau tidak
+        if (downloadManager != null) {
+            Toast.makeText(this, "File berhasil diunduh", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "File gagal diunduh", Toast.LENGTH_SHORT).show()
+        }
     }
     private fun showDownloadConfirmationDialog() {
         val alertDialog = AlertDialog.Builder(this)
@@ -173,7 +178,7 @@ class DetailActivity : AppCompatActivity() {
                 val data = intent.getStringExtra("extra")
                 val materi = Gson().fromJson<DataItem>(data, DataItem::class.java)
                 val namaFile = materi.filepdf
-                val url = "http://192.168.1.5/androidapi/public/storage/filepdf/" + materi.filepdf
+                val url = "https://webapiandro.000webhostapp.com/storage/filepdf/" + materi.filepdf
                 downloadFile(url, namaFile!!)
             }
             .setNegativeButton("Tidak", null)
